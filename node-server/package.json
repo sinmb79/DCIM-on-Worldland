@@ -1,0 +1,26 @@
+{
+  "name": "dcip-node-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ts-node src/api.ts",
+    "dev": "nodemon --watch src --exec ts-node src/api.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "express": "^4.19.2",
+    "kubo-rpc-client": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
