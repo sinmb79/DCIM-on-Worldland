@@ -1,0 +1,33 @@
+{
+  "name": "dcip-worldland",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Decentralized Collective Intelligence Protocol on Worldland",
+  "workspaces": [
+    "node-server"
+  ],
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:testnet": "hardhat run scripts/deploy.js --network worldland_test",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network worldland",
+    "register:node:local": "hardhat run scripts/register-node.js --network localhost",
+    "site:serve": "node scripts/serve-site.js",
+    "typecheck": "npm run typecheck --workspace node-server",
+    "node:start": "npm run start --workspace node-server",
+    "node:dev": "npm run dev --workspace node-server"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "chai": "^4.5.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.10",
+    "solc": "0.8.24"
+  }
+}

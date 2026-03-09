@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DCIP on Worldland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-mark">DCIP</span>
+        <span class="brand-copy">
+          <strong>DCIP</strong>
+          <span>On Worldland</span>
+        </span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#why">Why</a></li>
+          <li><a href="#tokenomics">Tokenomics</a></li>
+          <li><a href="#participate">Participate</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta-group">
+        <a class="btn-ghost" href="https://github.com/sinmb79/DCIM-on-Worldland" target="_blank" rel="noreferrer">GitHub</a>
+        <button class="btn" type="button" data-connect-wallet>Connect Wallet</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <article class="hero-card hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Fair Launch. No pre-mine. No team allocation.
+          </div>
+          <h1>
+            Decentralized
+            <span>Collective Intelligence</span>
+            Protocol
+          </h1>
+          <p>
+            DCIP turns AI inference into a public coordination primitive. Nodes answer queries, store results on IPFS,
+            prove them on Worldland, and earn ACL under the same rules whether they are human-run or AI-native.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-secondary" href="#participate">Start Querying</a>
+            <a class="btn-ghost" href="#roadmap">See the rollout</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <strong>2.1B</strong>
+              <span>Total ACL supply, fixed in code</span>
+            </div>
+            <div class="metric-card">
+              <strong>84</strong>
+              <span>ACL block reward at launch</span>
+            </div>
+            <div class="metric-card">
+              <strong>60 / 40</strong>
+              <span>Reward split between proposer and validators</span>
+            </div>
+            <div class="metric-card">
+              <strong>87</strong>
+              <span>Worldland chain ID</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero-side">
+          <section class="panel">
+            <p class="panel-title">Wallet</p>
+            <h2>Ready to query the network</h2>
+            <div class="status-row">
+              <div class="status-pill">
+                <strong data-wallet-status>Wallet required</strong>
+              </div>
+              <div class="status-pill">
+                <strong data-network-status>Worldland not checked</strong>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-item">
+                <span>Connected Address</span>
+                <span data-wallet-address>Connect a Worldland wallet to submit queries.</span>
+              </div>
+              <div class="detail-item">
+                <span>Node API</span>
+                <span>Configured via <code>site/config.js</code></span>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <p class="panel-title">Node Status</p>
+            <h2>Current proposer endpoint</h2>
+            <div class="detail-grid">
+              <div class="detail-item">
+                <span>Node Address</span>
+                <span data-node-address>Loading...</span>
+              </div>
+              <div class="detail-item">
+                <span>Registered</span>
+                <span data-node-registered>Loading...</span>
+              </div>
+              <div class="detail-item">
+                <span>Role</span>
+                <span data-node-role>Loading...</span>
+              </div>
+              <div class="detail-item">
+                <span>Reputation</span>
+                <span data-node-reputation>Loading...</span>
+              </div>
+              <div class="detail-item" style="grid-column: 1 / -1;">
+                <span>Endpoint</span>
+                <span data-node-endpoint>Loading...</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="section" id="why">
+        <div class="section-copy">
+          <div>
+            <p class="panel-title">Why DCIP</p>
+            <h2>AI coordination should be infrastructure, not a product silo.</h2>
+          </div>
+          <p>
+            The project documents frame DCIP as an open protocol layer: inference happens off-chain, proof happens
+            on-chain, and ACL issuance emerges from participation instead of administrative discretion.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card">
+            <p class="panel-title">01</p>
+            <h3>No single owner</h3>
+            <p>Deployment is a setup step, not a governance role. The token owner renounces control after wiring the protocol.</p>
+          </article>
+          <article class="story-card">
+            <p class="panel-title">02</p>
+            <h3>Proof of Inference</h3>
+            <p>Each result is hashed, stored on IPFS, signed by validators, and verified on Worldland before ACL is minted.</p>
+          </article>
+          <article class="story-card">
+            <p class="panel-title">03</p>
+            <h3>Humans and agents</h3>
+            <p>AI nodes, validator nodes, human participants, and bounty solvers all plug into the same incentive surface.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="tokenomics">
+        <div class="section-copy">
+          <div>
+            <p class="panel-title">Tokenomics</p>
+            <h2>Bitcoin-style issuance, calibrated for 10-second blocks.</h2>
+          </div>
+          <p>
+            ACL starts at 84 tokens per block, halves every 12,614,400 blocks, and routes 100% of each reward to participants.
+          </p>
+        </div>
+
+        <div class="token-grid">
+          <article class="hero-card">
+            <p class="panel-title">Halving schedule</p>
+            <div class="reward-line">
+              <span>Year 0-4</span>
+              <div class="bar-shell"><div class="bar-fill" style="width:100%"></div></div>
+              <span>84 ACL</span>
+            </div>
+            <div class="reward-line">
+              <span>Year 4-8</span>
+              <div class="bar-shell"><div class="bar-fill" style="width:50%"></div></div>
+              <span>42 ACL</span>
+            </div>
+            <div class="reward-line">
+              <span>Year 8-12</span>
+              <div class="bar-shell"><div class="bar-fill" style="width:25%"></div></div>
+              <span>21 ACL</span>
+            </div>
+            <div class="reward-line">
+              <span>Year 12-16</span>
+              <div class="bar-shell"><div class="bar-fill" style="width:12.5%"></div></div>
+              <span>10.5 ACL</span>
+            </div>
+          </article>
+
+          <article class="hero-card">
+            <p class="panel-title">Reward distribution</p>
+            <div class="distribution-row">
+              <span>Proposer</span>
+              <div class="bar-shell"><div class="bar-fill" style="width:60%"></div></div>
+              <span>60%</span>
+            </div>
+            <div class="distribution-row">
+              <span>Validators</span>
+              <div class="bar-shell"><div class="bar-fill" style="width:40%"></div></div>
+              <span>40%</span>
+            </div>
+            <div class="distribution-row">
+              <span>Treasury</span>
+              <div class="bar-shell"><div class="bar-fill" style="width:0%"></div></div>
+              <span>0%</span>
+            </div>
+            <p class="query-note">
+              In v1, unclaimed block burns are emitted as on-chain events. Whitepaper-only fee burn and anti-spam mechanics are deferred.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="participate">
+        <div class="section-copy">
+          <div>
+            <p class="panel-title">Participate</p>
+            <h2>Use the protocol now, not just read about it.</h2>
+          </div>
+          <p>
+            The MVP site connects a Worldland wallet, sends a query to a DCIP node, and surfaces the resulting answer, transaction hash, and IPFS CID.
+          </p>
+        </div>
+
+        <div class="participation-tabs">
+          <button class="tab-button is-active" type="button" data-tab-target="user">User</button>
+          <button class="tab-button" type="button" data-tab-target="node">Node Operator</button>
+          <button class="tab-button" type="button" data-tab-target="validator">Validator</button>
+          <button class="tab-button" type="button" data-tab-target="bounty">Bounty Poster</button>
+        </div>
+
+        <div class="query-layout">
+          <div>
+            <section class="query-card" data-tab-panel="user">
+              <p class="panel-title">Live Query</p>
+              <h2 style="margin-top:0;">Submit a query to the collective intelligence network.</h2>
+              <form class="query-form" data-query-form>
+                <div class="field">
+                  <label for="query">Query</label>
+                  <textarea id="query" data-query-input placeholder="Ask a question that should be answered by a DCIP node." required></textarea>
+                </div>
+                <div class="field">
+                  <label for="level">Complexity level</label>
+                  <select id="level" data-query-level>
+                    <option value="1">Level 1 - Simple</option>
+                    <option value="2" selected>Level 2 - General</option>
+                    <option value="3">Level 3 - Collective</option>
+                  </select>
+                </div>
+                <div class="query-actions">
+                  <button class="btn-secondary" type="submit" data-query-submit>Submit Query</button>
+                  <button class="btn-ghost" type="button" data-connect-wallet>Connect Wallet</button>
+                </div>
+                <div class="query-error" data-query-error></div>
+              </form>
+            </section>
+
+            <section class="query-card" data-tab-panel="node" hidden>
+              <p class="panel-title">Node Operator</p>
+              <h2 style="margin-top:0;">Run inference, collect signatures, submit proof.</h2>
+              <p>
+                Configure the root <code>.env</code>, start the TypeScript node server, and register your endpoint with
+                <code>DCIPRegistry.registerNode</code> using the helper functions in <code>node-server/src/chain.ts</code>.
+              </p>
+            </section>
+
+            <section class="query-card" data-tab-panel="validator" hidden>
+              <p class="panel-title">Validator</p>
+              <h2 style="margin-top:0;">Stay online and sign proofs.</h2>
+              <p>
+                Validator nodes use the same API server, expose <code>/sign</code>, and earn from the 40% validator share when their signatures make it on-chain.
+              </p>
+            </section>
+
+            <section class="query-card" data-tab-panel="bounty" hidden>
+              <p class="panel-title">Bounty Poster</p>
+              <h2 style="margin-top:0;">Escrow ACL and reward the best solution.</h2>
+              <p>
+                Post an IPFS-backed problem statement, accept solution CIDs, and release ACL automatically to the winning solver with <code>Bounty.approveSolution</code>.
+              </p>
+            </section>
+          </div>
+
+          <div>
+            <section class="result-card" data-result-card hidden>
+              <p class="panel-title">Result</p>
+              <pre data-answer></pre>
+              <div class="link-block">
+                <div>
+                  <strong>Query hash</strong><br>
+                  <span data-query-hash></span>
+                </div>
+                <div>
+                  <strong>Transaction</strong><br>
+                  <a data-tx-link href="#" target="_blank" rel="noreferrer"></a>
+                </div>
+                <div>
+                  <strong>IPFS CID</strong><br>
+                  <a data-cid-link href="#" target="_blank" rel="noreferrer"></a>
+                </div>
+              </div>
+            </section>
+
+            <section class="node-card">
+              <p class="panel-title">Node Connection</p>
+              <h2 style="margin-top:0;">What this frontend expects</h2>
+              <ul>
+                <li>Worldland wallet on chain ID 87</li>
+                <li>A reachable DCIP node API at <code>nodeApiBaseUrl</code></li>
+                <li>Optional <code>CORS_ORIGIN</code> when the site and API use different origins</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-copy">
+          <div>
+            <p class="panel-title">Roadmap</p>
+            <h2>v1 ships the protocol spine, not every whitepaper ambition.</h2>
+          </div>
+          <p>
+            This implementation focuses on contract deployment, node-server operation, and a usable query surface. Anti-spam economics, fee burns, and zkML remain future phases.
+          </p>
+        </div>
+
+        <div class="roadmap-list">
+          <article class="roadmap-card">
+            <span class="badge">Now</span>
+            <strong>Core contracts</strong>
+            <p>ACLToken, DCIPRegistry, PoIVerifier, and Bounty are implemented with deployment wiring and tests.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="badge is-live">Live MVP</span>
+            <strong>Node + Site</strong>
+            <p>Query submission, validator signature collection, IPFS storage, and a static wallet-connected site are available.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="badge">Next</span>
+            <strong>Protocol expansion</strong>
+            <p>Rate limits, sponsored usage, fee-burn mechanics, and stronger proof systems can layer onto the current foundation.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-card footer-grid">
+        <div>
+          <h3>DCIP on Worldland</h3>
+          <p>
+            Built from the project specifications in this workspace and aligned with the Fair Launch design described in the whitepaper.
+          </p>
+        </div>
+        <div>
+          <h3>Interfaces</h3>
+          <ul>
+            <li><code>POST /query</code></li>
+            <li><code>POST /sign</code></li>
+            <li><code>GET /status</code></li>
+            <li><code>GET /health</code></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Source</h3>
+          <ul>
+            <li><a href="https://github.com/sinmb79/DCIM-on-Worldland" target="_blank" rel="noreferrer">GitHub repository</a></li>
+            <li><a href="#participate">Run a query</a></li>
+            <li><a href="#tokenomics">See tokenomics</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
