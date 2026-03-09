@@ -56,12 +56,15 @@ contract PoIVerifier {
         bytes[] calldata signatures
     ) external {
         require(bytes(responseCID).length > 0, "PoI: empty CID");
-        require(registry.isActiveNode(msg.sender), "PoI: proposer not registered");
         require(validators.length == signatures.length, "PoI: length mismatch");
         require(validators.length >= MIN_SIGNATURES, "PoI: not enough validators");
 
         bytes32 proofId = keccak256(abi.encodePacked(queryHash, responseCID));
         require(!processedProofs[proofId], "PoI: already processed");
+        // Lock the proof before any external calls to block replay via reentrancy.
+        processedProofs[proofId] = true;
+
+        require(registry.isActiveNode(msg.sender), "PoI: proposer not registered");
 
         bytes32 digest = MessageHashUtils.toEthSignedMessageHash(
             keccak256(abi.encodePacked(queryHash, responseCID))
@@ -79,8 +82,6 @@ contract PoIVerifier {
 
         uint256 reward = currentReward();
         require(reward > 0, "PoI: supply exhausted");
-
-        processedProofs[proofId] = true;
 
         uint256 proposerReward = (reward * PROPOSER_SHARE) / 100;
         uint256 validatorEach = (reward - proposerReward) / validators.length;
